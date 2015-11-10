@@ -1,0 +1,81 @@
+body{
+	width:540px;
+	margin: auto;
+	font-family:Arial;
+}
+h1{
+	font-size:32px;
+	line-height:76px;
+}
+#new-todo {
+	width:100%;
+	padding:6px 8px;
+	font-size:18px;
+	margin-bottom: 12px;
+}
+#todo-list {
+	margin:16px 0;
+	border-bottom:1px solid #bebebe;
+}
+#todo-list li {
+	padding:4px 0;
+	position:relative;
+	font-size:16px;
+	padding:4px 20px 4px 4px;
+	border:1px solid #bebebe;
+	border-bottom:none;
+}
+#todo-list li label{
+	width:100%;
+}
+#todo-list li .destroy {
+	display:none;
+	position:absolute;
+	top:-3px;
+	right: 0px;
+	width: 22px;
+	height: 22px;
+	font-size: 24px;
+	color: red;
+	background: none;
+	border:none;
+	cursor:pointer;
+}
+#todo-list li:hover .destroy {
+	display:block;
+}
+#todo-list li .destroy:after {
+	content: '×';
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#todo-list li.editing {
+	background:#eeeeee;
+}
+#todo-list li.editing .view {
+	display:none;
+}
+#todo-list li.editing .edit {
+	display:block;
+}
+#todo-list li .edit {
+	display:none;
+	border:none;
+	background:none;
+	padding-left:15px;
+	margin-top: -2px;
+	font-size:16px;
+	width:100%;
+}
+#todo-list li.completed label{
+	text-decoration: line-through;
+}
+.hidden{
+	display:none;
+}
+.selected{
+	cursor:default;
+	color:#000000;
+	text-decoration: none;
+}

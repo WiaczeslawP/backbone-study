@@ -1,0 +1,34 @@
+{
+  "name": "backbone-study",
+  "version": "0.0.0",
+  "description": "",
+  "repository": "https://github.com/WiaczeslawP/backbone-study",
+  "author": "WiaczeslawP",
+  "scripts": {
+    "preinstall": "grunt --version && echo bower $(bower -v)"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-karma": "^0.12.1",
+    "grunt-newer": "^1.1.1",
+    "jasmine": "^2.3.2",
+    "karma": "^0.13.10",
+    "karma-jasmine": "^0.3.6",
+    "karma-junit-reporter": "^0.3.7",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "karma-phantomjs-shim": "^1.1.1",
+    "karma-sourcemap-loader": "^0.3.5",
+    "karma-spec-reporter": "0.0.20",
+    "phantomjs": ">=1.9",
+    "time-grunt": "^1.2.1"
+  },
+  "engines": {
+    "node": ">=0.10.35"
+  },
+  "dependencies": {
+  }
+}

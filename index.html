@@ -18,9 +18,8 @@
 		</section>
 		<footer id="footer"></footer>
 	</section>
-	</div>
 	<script type="text/template" id="item-template">
-		<div class="view">
+		<div class="view <%= completed ? 'completed' : '' %>">
 			<input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
 			<label><%- title %></label>
 			<button class="destroy"></button>
@@ -44,7 +43,8 @@
 			<button id="clear-completed">Убрать выполненные (<%= completed %>)</button>
 		<% } %>
 	</script>
-	<script src="packed/js/components.min.js"></script>
-	<script src="packed/js/main.min.js"></script>
+	<script src="tmp/js/components.js"></script>
+	<script src="js/dist.js"></script>
+	<!-- script src="packed/js/main.min.js"></script -->
 </body>
 </html>

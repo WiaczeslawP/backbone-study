@@ -5,19 +5,17 @@
     "wiaczeslaw <wiaczeslaw.ss@gmail.com>"
   ],
   "description": "",
-  "main": "",
+  "main": {},
   "moduleType": [],
   "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
+  "ignore": {},
   "dependencies": {
     "jquery": "~2.1.4",
     "backbone": "~1.2.3",
-    "backbone.localStorage": "backbone.localstorage#~1.1.16"
+    "backbone.localStorage": "backbone.localstorage#~1.1.16",
+    "es6-module-loader": "~0.17.8"
+  },
+  "devDependencies": {
+    "babel": "*"
   }
 }

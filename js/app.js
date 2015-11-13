@@ -1,5 +1,8 @@
-var app = app || {};
-var ENTER_KEY = 13;
-$(function(){
-	new app.AppView();
-})
+import AppView from './appView';
+import Workspace from './router';
+
+$(() => {
+	new AppView();
+	new Workspace();
+	Backbone.history.start();
+});

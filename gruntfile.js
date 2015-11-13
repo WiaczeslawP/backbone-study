@@ -17,7 +17,7 @@ module.exports = function(grunt) {
                     ]
                 },
                 files: {
-                    'js/dist.js': ['js/app.js']
+                    'packed/js/main.min.js': ['js/app.js']
                 }
             }
         },
@@ -40,19 +40,7 @@ module.exports = function(grunt) {
         },
 
         concat: {
-            main: {
-                src: [
-                    'js/es5/todosView.js',
-                    'js/es5/todosCollection.js',
-                    'js/es5/todoModel.js',
-                    'js/es5/appView.js',
-                    'js/es5/router.js',
-                    'js/es5/app.js'
-                ],
-                dest: 
-                    'tmp/js/main.js'                 
-            },
-            dist: {
+            components: {
                 src: [
                     'bower_components/jquery/dist/jquery.js',
                     'bower_components/underscore/underscore.js',
@@ -67,10 +55,6 @@ module.exports = function(grunt) {
             components: {
                 src: 'tmp/js/components.js',
                 dest: 'packed/js/components.min.js'
-            },
-            main: {
-                src: 'tmp/js/main.js',
-                dest: 'packed/js/main.min.js'
             }
         },
         cssmin: {
@@ -92,7 +76,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['babel', 'concat', 'cssmin']);
+    grunt.registerTask('default', ['browserify',  'cssmin']);
     grunt.registerTask('br', ['browserify']);
 
 };

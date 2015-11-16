@@ -21,23 +21,23 @@ export default class AppView extends Backbone.View {
 	} 
 
 	constructor(options) {
-		super(options);	
+		super(options);
 
 		this.todosCollecion = new TodoList();
 		this.todosCollecion.fetch().then(()=>{
 			this.render();
 		});
 		this.todosView = new TodosView({collection:this.todosCollecion});
-		this.listenTo(this.Todos, 'change:completed', this.filterOne);
 		this.listenTo(Backbone, 'filter', this.setFilter);
-		this.listenTo(this.todosCollecion, 'change', this.renderFooter);
-		this.listenTo(this.todosCollecion, 'add', this.renderFooter);
-		this.listenTo(this.todosCollecion, 'remove', this.renderFooter);
+		this.listenTo(this.todosCollecion, 'change', this.render);
+		this.listenTo(this.todosCollecion, 'add', this.render);
+		this.listenTo(this.todosCollecion, 'remove', this.render);
 	}
 	render() {
 		var completed = this.todosCollecion.completed().length;
 		var remaining = this.todosCollecion.remaining().length;
 		let $main = this.$('#main');
+		let $footer = this.$('#footer');
 		if (this.todosCollecion.length) {
 			$main.show();
 			this.renderFooter();
@@ -66,13 +66,6 @@ export default class AppView extends Backbone.View {
 				remaining: remaining
 			}))
 		}
-	}
-
-	filterOne(todo) {
-		todo.trigger('visible');
-	}
-	filterAll(e) {
-		Todos.each(this.filterOne, this);
 	}
 	newAttributes(param) {
 		return {

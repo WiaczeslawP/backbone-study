@@ -16,6 +16,7 @@
     "es6-module-loader": "~0.17.8"
   },
   "devDependencies": {
-    "babel": "*"
+    "babel": "*",
+    "jasmine-core": "jasmine#~2.3.4"
   }
 }

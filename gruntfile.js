@@ -65,7 +65,12 @@ module.exports = function(grunt) {
             }
         },
         clean:
-            ['tmp']
+            ['tmp'],
+        karma: {
+            unit: {
+                configFile: 'karma.conf.js'
+            }
+        },
     });
 
     grunt.loadNpmTasks('grunt-contrib-concat');
@@ -78,6 +83,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('default', ['browserify',  'cssmin']);
     grunt.registerTask('br', ['browserify']);
+    grunt.registerTask('karma', ['karma']);
 
 };
 

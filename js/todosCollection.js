@@ -4,6 +4,7 @@ export default class TodoList extends Backbone.Collection {
 	constructor(options) {
 		super(options);
 		this.model = Todo;
+		this.url = '/todotest';
 		this.localStorage = new Backbone.LocalStorage('todos-backbone');
 	}
 	completed() {
